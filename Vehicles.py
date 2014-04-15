@@ -75,16 +75,20 @@ class Van(VehicleAbstract):
 
 
 class Sedan(Car):    
-    def __init__(self,*args):        
+    def __init__(self,*args):
+        pass
 
 class Sporting(Car):    
     def __init__(self,*args):
+        pass
 
 class Topic(Van):
     def __init__(self,*args):
+        pass
         
 class Sprinter(Van):
     def __init__(self,*args):
+        pass
     
 
 

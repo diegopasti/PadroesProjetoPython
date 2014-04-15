@@ -1,3 +1,4 @@
+import Vehicles, VehiclesBuilder
 class EnumCars():
 
     LOW_POWER    = 1300
@@ -23,14 +24,14 @@ class VanShop():
         pass
 
     def SelectVehicle(self,Power,Color):
-        Sprinter = Sprinter()
-        self.Director = VansDirectorBuilder()        
-        self.Builder  = VansBuilder(Sprinter)
+        Veiculo = Vehicles.Sprinter()
+        self.Director = VehiclesBuilder.VansDirectorBuilder()        
+        self.Builder  = VehiclesBuilder.VansBuilder(Veiculo)
         
         if(Power == EnumCars.LOW_POWER or Power == EnumCars.MIDDLE_POWER):
-            
-
-            
+            Veiculo = self.Director.Build(self.Builder)
+        else:
+            Veiculo = self.Director.Build(self.Builder)
             
 def main():
     Shop = VanShop()

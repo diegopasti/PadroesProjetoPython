@@ -29,7 +29,7 @@ class Car(VehicleAbstract):
     def __init__(self,*args):
         print "Car is Instancead with Sucessfully!"
 
-    def AddEnginer(self,potencia):
+    def AddEngine(self,potencia):
         self.Enginer = potencia
         print "Enginer was included in the Car"
 
@@ -54,7 +54,7 @@ class Van(VehicleAbstract):
     def __init__(self,*args):
         print "Van is Instancead with Sucessfully!"
 
-    def AddEnginer(self,potencia):
+    def AddEngine(self,potencia):
         self.Enginer = potencia
         print "Enginer was included in the Van"
 

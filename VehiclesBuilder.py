@@ -55,7 +55,6 @@ class CarsBuilder(VehiclesBuilderAbstract):
         print "Windows was Builded with sucessfully"
 
     def GetVehicle(self,*args):
-        print "Car was builded with sucessfully"
         return self.ActiveVehicle
 
 class VansBuilder(VehiclesBuilderAbstract):
@@ -86,7 +85,6 @@ class VansBuilder(VehiclesBuilderAbstract):
         print "Windows was Builded with sucessfully"
 
     def GetVehicle(self,*args):
-        print "Van was builded with sucessfully"
         return self.ActiveVehicle
 
     
@@ -111,27 +109,80 @@ class CarsDirectorBuilder(AbstractDirectorBuilder):
     def Build(self,Builder):
         print "Director of construction Car instantiated successfully and began assembling the vehicle"
         Builder.BuildChassis()
-        Builder.BuildEngine(Potencia)
         Builder.BuildBody()
         Builder.BuildWindows()
-        Builder.GetVehicle()
+        print "CAR was created with Sucessfully"
+        return Builder.GetVehicle()
 
 class VansDirectorBuilder(AbstractDirectorBuilder):
 
     def __init__(self,*args):
         pass
 
-    def Build(self,Builder,Potencia):
+    def Build(self,Builder):
         print "Director of construction Vans instantiated successfully and began assembling the vehicle"
         Builder.BuildChassis()
-        Builder.BuildEngine(Potencia)
         Builder.BuildBody()
         Builder.BuildWindows()
+        print "VANS was created with Sucessfully"
         return Builder.GetVehicle()
 
+class SedanDirectorBuilder(AbstractDirectorBuilder):
 
-        
-        
+    def __init__(self,*args):
+        pass
+
+    def Build(self,Builder):
+        print "Director of construction Sedans instantiated successfully and began assembling the vehicle"
+        Builder.BuildChassis()
+        Builder.BuildEngine(1800)
+        Builder.BuildBody()
+        Builder.BuildWindows()
+        print "SEDAN was created with Sucessfully"
+        return Builder.GetVehicle()
+
+class SportingDirectorBuilder(AbstractDirectorBuilder):
+
+    def __init__(self,*args):
+        pass
+
+    def Build(self,Builder):
+        print "Director of construction Sportings instantiated successfully and began assembling the vehicle"
+        Builder.BuildChassis()
+        Builder.BuildEngine(3000)
+        Builder.BuildBody()
+        Builder.BuildWindows()
+        print "SPORTING was created with Sucessfully"
+        return Builder.GetVehicle()
+
+class TopicDirectorBuilder(AbstractDirectorBuilder):
+
+    def __init__(self,*args):
+        pass
+
+    def Build(self,Builder):
+        print "Director of construction Topic instantiated successfully and began assembling the vehicle"
+        Builder.BuildChassis()
+        Builder.BuildEngine(2500)
+        Builder.BuildBody()
+        Builder.BuildWindows()
+        print "TOPIC was created with Sucessfully"
+        return Builder.GetVehicle()
+
+class SprinterDirectorBuilder(AbstractDirectorBuilder):
+
+    def __init__(self,*args):
+        pass
+
+    def Build(self,Builder):
+        print "Director of construction Sprinter instantiated successfully and began assembling the vehicle"
+        Builder.BuildChassis()
+        Builder.BuildEngine(3500)
+        Builder.BuildBody()
+        Builder.BuildWindows()
+        print "SPRINTER was created with Sucessfully"
+        return Builder.GetVehicle()
+
 
 def main():
     veiculo = "CAR"

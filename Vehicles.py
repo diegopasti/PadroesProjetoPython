@@ -76,19 +76,19 @@ class Van(VehicleAbstract):
 
 class Sedan(Car):    
     def __init__(self,*args):
-        pass
+        print "Sedan is Instancead with Sucessfully!"
 
 class Sporting(Car):    
     def __init__(self,*args):
-        pass
+        print "Sporting is Instancead with Sucessfully!"
 
 class Topic(Van):
     def __init__(self,*args):
-        pass
+        print "Topic is Instancead with Sucessfully!"
         
 class Sprinter(Van):
     def __init__(self,*args):
-        pass
+        print "Sprinter is Instancead with Sucessfully!"
     
 
 

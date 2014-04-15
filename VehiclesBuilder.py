@@ -15,6 +15,9 @@ class VehiclesBuilderAbstract():
     def BuildBody(self,*args):
         pass
 
+    def BuildEngine(self,*args):
+        pass
+
     def BuildChassis(self,*args):
         pass
 
@@ -34,6 +37,10 @@ class CarsBuilder(VehiclesBuilderAbstract):
         self.Factory = VehiclesFactory.CarsFactory()
         self.ActiveVehicle = Car
         print "Instance of Builder of Cars was Created"
+
+    def BuildEngine(self,potencia):
+        self.ActiveVehicle.AddEngine(potencia)
+        print "Engine was Builded with sucessfully"
 
     def BuildBody(self,*args):
         self.ActiveVehicle.AddBody(self.Factory.CreateBody())
@@ -61,6 +68,10 @@ class VansBuilder(VehiclesBuilderAbstract):
         self.Factory = VehiclesFactory.VansFactory()
         self.ActiveVehicle = Car
         print "Instance of Builder of Cars was Created"
+
+    def BuildEngine(self,potencia):
+        self.ActiveVehicle.AddEngine(potencia)
+        print "Engine was Builded with sucessfully"
 
     def BuildBody(self,*args):
         self.ActiveVehicle.AddBody(self.Factory.CreateBody())
@@ -100,6 +111,7 @@ class CarsDirectorBuilder(AbstractDirectorBuilder):
     def Build(self,Builder):
         print "Director of construction Car instantiated successfully and began assembling the vehicle"
         Builder.BuildChassis()
+        Builder.BuildEngine(Potencia)
         Builder.BuildBody()
         Builder.BuildWindows()
         Builder.GetVehicle()
@@ -109,12 +121,16 @@ class VansDirectorBuilder(AbstractDirectorBuilder):
     def __init__(self,*args):
         pass
 
-    def Build(self,Builder):
+    def Build(self,Builder,Potencia):
         print "Director of construction Vans instantiated successfully and began assembling the vehicle"
         Builder.BuildChassis()
+        Builder.BuildEngine(Potencia)
         Builder.BuildBody()
         Builder.BuildWindows()
-        Builder.GetVehicle()
+        return Builder.GetVehicle()
+
+
+        
         
 
 def main():

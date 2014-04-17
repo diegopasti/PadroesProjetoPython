@@ -1,4 +1,5 @@
-class VehicleAbstract():
+import Clonable
+class VehicleAbstract(Clonable.Clonable):
 
     Chassis = None
     Enginer = None
@@ -23,6 +24,7 @@ class VehicleAbstract():
 
     def AddColor(self,color):
         pass
+        
 
 class Car(VehicleAbstract):
 
